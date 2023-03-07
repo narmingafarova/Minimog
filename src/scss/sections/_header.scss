@@ -1,0 +1,56 @@
+.navbar {
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-link {
+        line-height: 23px;
+        font-weight: 500;
+        color: #000;
+      }
+    }
+  }
+  .menu-list {
+    font-size: 15px;
+    width: 20%;
+    .navbar-nav {
+      .nav-link {
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          top: 80%;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #333;
+          transition: 0.3s;
+        }
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .nav-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; 
+}
+
+@media screen and (max-width: 990px) {
+  .navbar {
+    .nav-icons {
+      display: none;
+    }
+  }
+}
