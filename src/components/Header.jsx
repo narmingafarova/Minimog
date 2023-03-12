@@ -1,11 +1,10 @@
-import { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Search, Person, Star, Bag } from 'react-bootstrap-icons';
 import { LinkContainer } from 'react-router-bootstrap';
-import { CharacterContext } from '../context/CharacterContext';
+import { useCart } from 'react-use-cart';
 
 function Header() {
-  const [characters] = useContext(CharacterContext);
+  const {totalItems} = useCart();
   return (
     <Navbar bg="white" expand="lg" sticky="top">
       <Container>
@@ -13,8 +12,8 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav" className='menu-list'>
           <Nav className="me-auto d-flex align-items-center justify-content-center">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/">Shop</Nav.Link>
-            <Nav.Link href="/">Products</Nav.Link>
+            <Nav.Link href="/products">Shop</Nav.Link>
+            <Nav.Link href="/products">Products</Nav.Link>
             <Nav.Link href="/">Pages</Nav.Link>
             <Nav.Link href="/">Blogs</Nav.Link>
             <Nav.Link href="/">Features</Nav.Link>
@@ -28,8 +27,8 @@ function Header() {
             <Nav.Link href="/" className='me-2'><Search fontSize={20} /></Nav.Link>
             <Nav.Link href="/" className='me-2'><Person fontSize={22} /></Nav.Link>
             <Nav.Link href="/" className='me-2'><Star fontSize={20} /></Nav.Link>
-            <LinkContainer to="/characters">
-              <Nav.Link><Bag fontSize={20} />&nbsp;({characters.length})</Nav.Link>
+            <LinkContainer to="/cart">
+              <Nav.Link><Bag fontSize={20} />&nbsp;({totalItems})</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

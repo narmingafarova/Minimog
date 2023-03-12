@@ -47,6 +47,7 @@
       font-weight: 500;
       color: #000;
       position: relative;
+      overflow: hidden;
       &::after {
         position: absolute;
         content: "";
@@ -55,7 +56,8 @@
         width: 100%;
         height: 2px;
         background-color: #000;
-        transition: 1s;
+        transition: 0.5s;
+        // transform: translateX(0%);
       }
       &::before {
         position: absolute;
@@ -65,14 +67,18 @@
         width: 0;
         height: 2px;
         background-color: #000;
-        transition: 2s;
+        transition: 0.5s;
+        transition-delay: 0.3s;
+        // transform: translateX(-110%);
       }
       &:hover {
         &::after {
+          // transform: translateX(110%);
           width: 0;
         }
         &::before {
           width: 100%;
+          // transform: translateX(0);
         }
       }
     }
