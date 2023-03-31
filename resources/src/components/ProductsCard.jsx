@@ -4,7 +4,6 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { useCart } from 'react-use-cart';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import $ from 'jquery';
 
 const ProductsCard = ({ category, image, title, price, id, alldata }) => {
     const { addItem } = useCart();
@@ -18,21 +17,7 @@ const ProductsCard = ({ category, image, title, price, id, alldata }) => {
         progress: undefined,
         theme: "colored",
     });
-
-    // var $grid = $(".products-categories").isotope({
-    //     itemSelector: ".all",
-    //     layoutMode: "fitRows",
-    // });
-
-    // $(".choosing").on("click", function () {
-    //     var filterValue = $(this).attr("data-filter");
-    //     $grid.isotope({
-    //         filter: filterValue,
-    //     });
-    //     $(".choosing").removeClass("active");
-    //     $(this).addClass("active");
-    // });
-
+    
     return (
         <Col sm={12} md={4} className={`all ${category.substring(0, 4)}`}>
             <Card className='char-card border-0'>

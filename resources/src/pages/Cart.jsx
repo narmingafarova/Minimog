@@ -20,9 +20,9 @@ function Cart() {
 
     return isEmpty ?
         <div className="d-flex flex-column align-items-center justify-content-center">
-            <img src="https://bakestudio.in/assets/images/cart/empty-cart.gif" alt="empty-cart" width="70%" style={{ backgroundColor: "transparent" }} />
+            <img src="https://bakestudio.in/assets/images/cart/empty-cart.gif" alt="empty-cart" width="70%" />
             <LinkContainer to="/products">
-                <Button variant='transparent'><img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="back" width={100} /></Button>
+                <Button variant='transparent' className="border-0"><img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="back" width={100} /></Button>
             </LinkContainer>
         </div> :
         (
